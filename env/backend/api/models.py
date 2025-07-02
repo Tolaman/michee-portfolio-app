@@ -1,5 +1,6 @@
 from time import timezone
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Project(models.Model):
@@ -8,7 +9,7 @@ class Project(models.Model):
     image = models.ImageField(upload_to='projects/', blank=True, default='projects/default.png')
     created_at = models.DateTimeField(blank=True, null=True, default=timezone.now)
 
-class Service(models.model):
+class Service(models.Model):
     title = models.CharField(max_length=155)
     description = models.CharField(max_length=500)
     logo = models.ImageField(upload_to='services/', blank=True)
